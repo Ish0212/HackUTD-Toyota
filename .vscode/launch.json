@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend: FastAPI",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "app.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--reload"
+      ],
+      "cwd": "${workspaceFolder}/toyota-vehicle-finder/backend",
+      "envFile": "${workspaceFolder}/toyota-vehicle-finder/backend/.env",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Frontend: Next.js",
+      "type": "pwa-node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/toyota-vehicle-finder/frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "envFile": "${workspaceFolder}/toyota-vehicle-finder/frontend/.env.local",
+      "console": "integratedTerminal"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "🚀 Start Toyota Full Stack App",
+      "configurations": [
+        "Backend: FastAPI",
+        "Frontend: Next.js"
+      ]
+    }
+  ]
+}
